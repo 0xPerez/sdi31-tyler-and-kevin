@@ -1,6 +1,6 @@
 https://learn-2.galvanize.com/cohorts/4454/blocks/1882/content_files/lessons/js-fundamentals3-todo.md
 
-1.	Create repo
+1.	Create repo 
 2.	Add HTML from above instructions
 3.	NPM install the live-server
 a.	Confirm working
@@ -10,7 +10,7 @@ a.	Confirm working
 6.	Requirements
 a.	View all of the to-do tasks
 b.	Add a to-do to the list of to-do tasks
-c.	Mark a task as completed by crossing it out on click
+c.	Mark a task as completed by crossing it out on 
 d.	Remove to-do tasks by removing those elements from the DOM
 e.	Be aesthetically pleasing (styled)
 

@@ -1,5 +1,6 @@
 console.log('My code is running');
 document.getElementById("submitButton").addEventListener("click", addTask);
+//Spawn exampletask
 addTask("This is an example task. Click the button to the right to delete me.")
 
 function addTask(taskString){
@@ -10,23 +11,25 @@ function addTask(taskString){
         task = document.getElementById("taskEntry").value; //if addtask is not called programmatically, get the bar instead
     }
     if (task === ''){
-        alert("You can't just do nothing! Enter a task before submitting")
+        alert("You can't just do nothing! Enter a task before submitting") // Edge case check for empty taskEntry bar
         return false
     }
     
-    //TODO change listener to pass task string
-    const newTask = document.createElement("li"); // create new 
+    const newTask = document.createElement("li"); // create new element
 
     newTask.innerHTML =
     `
-    <span>
-        ${task}
+    <span class= "task">
+        <span class = "taskText">
+        ${task} 
+        </span>
         <button class="taskDeleteButton">🗙</button>
     </span>
     `
 
-    
-
+    // Mark an event as complete
+    newTask.getElementsByClassName("taskText")[0].addEventListener("click",markCompleted)
+    // Delete a task event
     newTask.getElementsByClassName("taskDeleteButton")[0].addEventListener("click",removeTask)
     //Append task to task container UL
     document.getElementById("taskList").appendChild(newTask); // add our little guy to the task list
@@ -34,15 +37,17 @@ function addTask(taskString){
 }
 
 function markCompleted() {
-    //Get calling element
+    //Get calling element 
+    let clickedButton = this 
+    
     //Set class to "completed task" so CSS can take over, CSS should strike it/fade/etc
-    //Remove listener
+    clickedButton.parentNode.className = "completedtask" 
+    console.log("Completed!");
+    // Remove event listener
+    this.removeEventListener("click",markCompleted)
 }
 
 function removeTask() {
     let clickedButton = this
     clickedButton.parentNode.parentNode.remove()
-    //Get calling element (deletebutton)
-    //Find parent LI (may need to go up multiple levels)
-    //Delete parent LI from DOM
 }
