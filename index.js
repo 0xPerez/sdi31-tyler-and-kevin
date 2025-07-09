@@ -1,38 +1,36 @@
-/* Todo and Stretch
-
-*/
 console.log('My code is running');
 document.getElementById("submitButton").addEventListener("click", addTask);
+addTask("This is an example task. Click the button to the right to delete me.")
 
-function addTask() {
-    let task =
-        document.getElementById("taskEntry").value;
-
-    let newTask =
-      document.createElement("li");
+function addTask(taskString){
+    let task = ""
+    if (taskString !== undefined && typeof(taskString)==='string') {
+        task = taskString //use parameter if argument goes in
+    } else {
+        task = document.getElementById("taskEntry").value; //if addtask is not called programmatically, get the bar instead
+    }
+    if (task === ''){
+        alert("You can't just do nothing! Enter a task before submitting")
+        return false
+    }
+    
+    //TODO change listener to pass task string
+    const newTask = document.createElement("li"); // create new 
 
     newTask.innerHTML =
     `
     <span>
         ${task}
-        <button>🗙</button>
+        <button class="taskDeleteButton">🗙</button>
     </span>
     `
-    document.getElementById("taskList").appendChild(newTask);
 
-    // console.log("Task added " + task);
-    //set innerhtml to task template, with taskname as stringliteral ${}
+    
 
-    /*
-    <span>
-        INPUTVALUEHERE
-        <button></button><!--change to trashcan Unicode--> 🗑  🗙
-    </span>
-      */
-
-    //Can we assign listeners before appending?
+    newTask.getElementsByClassName("taskDeleteButton")[0].addEventListener("click",removeTask)
     //Append task to task container UL
-    document.getElementById("taskEntry").value = "";
+    document.getElementById("taskList").appendChild(newTask); // add our little guy to the task list
+    document.getElementById("taskEntry").value = ""; // reset input bar to clean up
 }
 
 function markCompleted() {
@@ -42,6 +40,8 @@ function markCompleted() {
 }
 
 function removeTask() {
+    let clickedButton = this
+    clickedButton.parentNode.parentNode.remove()
     //Get calling element (deletebutton)
     //Find parent LI (may need to go up multiple levels)
     //Delete parent LI from DOM
