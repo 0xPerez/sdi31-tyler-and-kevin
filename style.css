@@ -1,0 +1,17 @@
+h1 {
+    color: purple;
+}
+
+li{
+    /*applies to all LI (task) items, override below*/
+}
+
+.task{
+    /*Uncompleted Tasks Container?*/
+}
+
+.completedtask{
+    /*Completed Tasks Container? */
+}
+
+/* Button styles, and specific button styles?*/
