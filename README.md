@@ -1,2 +1,2 @@
-# sdi31-tyler-and-kevin
+# SDI31-tyler-and-kevin
 Used for JS Fundamentals III
