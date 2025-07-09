@@ -1,7 +1,7 @@
-# Readme
-
 Created for: SDI31-tyler-and-kevin
 Used for JS Fundamentals III
+
+# Readme
 
 ## How-To-Run:
 
@@ -29,7 +29,7 @@ Done with a task but still want to see it? Click on the task
 itself, and you'll keep the text but now with a strike through!
 
 * ~~Bring back your dead goldfish~~
-Experimental! Only avalible version -0.82
+Experimental! Only avalible in version -0.82
 
 
                                    

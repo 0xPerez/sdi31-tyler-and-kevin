@@ -31,7 +31,7 @@ function addTask(taskString, complete = false) {
 
     newTask.getElementsByClassName("taskText")[0].addEventListener("click", markCompleted)
     if (complete === true) {
-        newTask.getElementsByClassName("taskText")[0].className = "completedtask"
+        newTask.getElementsByClassName("taskText")[0].parentNode.className = "completedtask"
     }
     // Delete a task event
     newTask.getElementsByClassName("taskDeleteButton")[0].addEventListener("click", removeTask)
