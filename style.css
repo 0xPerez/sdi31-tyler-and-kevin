@@ -1,13 +1,70 @@
-h1 {
-    color: red;
+body{
+    width: 90%;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    color: greenyellow;
+    justify-self: center;
+}
+
+header{
+    font-size: small;
+    justify-items: center;
+    justify-content: center;
+}
+
+pre:first-child{
+    justify-self: center;
+    justify-content: center;
+    border: 1px, solid, white;
+    padding: 20px;
+}
+
+footer{
+    margin: 10px;
+    justify-self: center;
+}
+
+.inputArea{
+    justify-self: center;
+}
+
+input{
+    color: greenyellow;
+    background-color: #505050;
+}
+
+button {
+    text-align: center; 
+    color: white;
+    background-color: darkgreen;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+input::placeholder{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+ul{
+    
+    width: inherit;
+    list-style-type: none;
+    justify-self: center;
+    justify-items: center;
+    border: 1px, solid, white;
+    padding-bottom: 10px;
 }
 
 li{
-    /*applies to all LI (task) items, override below*/
+    margin: 20px;
+    text-wrap: nowrap;
 }
 
 .task{
-    color: black;
+    color: white;
     /*Uncompleted Tasks Container?*/
     
 }
@@ -15,6 +72,12 @@ li{
 .completedtask{
     text-decoration: line-through;
     /*Completed Tasks Container? */
+}
+
+pre{
+    font-size: small;
+    margin: 2;
+    justify-content: center;
 }
 
 /* Button styles, and specific button styles?*/
